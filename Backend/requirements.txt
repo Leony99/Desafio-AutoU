@@ -1,7 +1,7 @@
 fastapi
-uvicorn
+uvicorn[standard]
 python-multipart
 pypdf
 openai
 python-dotenv
-spacy
+spacy==3.6.0
