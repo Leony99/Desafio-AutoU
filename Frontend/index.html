@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <title>AutoU - Email Classifier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Dark mode config -->
+    <script>
+        tailwind.config = {
+        darkMode: 'class'
+        }
+    </script>
+</head>
+
+<body class="text-gray-900 dark:bg-slate-900 dark:text-gray-100 transition-colors">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between px-8 py-5 border-b dark:border-slate-700">
+        <div class="text-2xl font-bold text-orange-500">AutoU</div>
+
+        <div class="flex items-center gap-4">
+        <button
+            onclick="toggleTheme()"
+            class="px-3 py-1 rounded-md border dark:border-slate-600 text-sm hover:bg-gray-100 dark:hover:bg-slate-800"
+        >
+            🌙
+        </button>
+        </div>
+    </header>
+
+    <main class="px-4">
+        <!-- Hero -->
+        <section class="text-center py-24 px-6 max-w-5xl mx-auto">
+            <h1 class="text-5xl font-bold leading-tight">
+                Inteligência que transforma
+                <span class="block bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    complexidade em vantagem competitiva
+                </span>
+            </h1>
+
+            <p class="mt-6 text-lg opacity-80">
+                Classifique emails automaticamente com IA e foque no que realmente importa.
+            </p>
+        </section>
+
+        <!-- App -->
+        <section
+        class="max-w-4xl mx-auto mx-[max(10px,5%)] mb-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur
+                border border-slate-200 dark:border-slate-700
+                rounded-2xl shadow-lg p-8"
+        >
+            <h2 class="text-2xl font-semibold mb-2">
+                Classificar email
+            </h2>
+
+            <p class="text-slate-600 dark:text-slate-400 mb-6">
+                Cole o texto do email ou envie um arquivo (.txt ou .pdf) para análise automática.
+            </p>
+
+            <textarea
+                id="emailText"
+                placeholder="Cole aqui o conteúdo do email..."
+                class="w-full min-h-[140px] rounded-xl border border-slate-300 dark:border-slate-700
+                    bg-white dark:bg-slate-800 p-4 text-sm
+                    focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4"
+            ></textarea>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center">
+                <input
+                type="file"
+                id="fileInput"
+                class="sm:col-span-2 block w-full text-sm text-slate-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-purple-50 file:text-purple-700
+                    hover:file:bg-purple-100
+                    dark:file:bg-purple-900/30 dark:file:text-purple-300"
+                />
+
+                <button
+                id="classifyBtn"
+                class="w-full h-full px-6 py-3 rounded-full
+                        bg-purple-600 text-white font-medium
+                        hover:bg-purple-700 transition"
+                >
+                Classificar email
+                </button>
+            </div>
+        </section>
+
+        <!-- Result -->
+        <section
+        id="resultSection"
+        class="max-w-4xl mx-auto mb-16 hidden
+                bg-white/80 dark:bg-slate-900/80 backdrop-blur
+                border border-slate-200 dark:border-slate-700
+                rounded-2xl shadow-lg p-8"
+        >
+            <div id="result"></div>
+        </section>
+    </main>
+
+    <script src="theme.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
