@@ -34,7 +34,7 @@ btn.addEventListener("click", async () => {
 
     try {
         /* ---------- API call ---------- */
-        const response = await fetch("http://127.0.0.1:8000/classify-email", {
+        const response = await fetch("https://desafio-autou-production-3734.up.railway.app/classify-email", {
             method: "POST",
             body: formData
         })
