@@ -5,3 +5,5 @@ pypdf
 openai
 python-dotenv
 spacy==3.6.0
+numpy<2.0
+pt-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/pt_core_news_sm-3.6.0/pt_core_news_sm-3.6.0.tar.gz
